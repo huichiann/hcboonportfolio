@@ -7,9 +7,11 @@ import BackToTop from 'vue-backtotop'
 import '@fortawesome/fontawesome-free/css/all.css'
 import '@fortawesome/fontawesome-free/js/all.js'
 import VueExpandableImage from 'vue-expandable-image'
+import pdf from 'vue-pdf'
 
 Vue.component('vue-headful', vueHeadful);
 Vue.use(VueExpandableImage)
+Vue.use(pdf)
 Vue.use(BackToTop)
 Vue.config.productionTip = false
 

@@ -3,7 +3,7 @@
     <v-row>
         <v-container>
             <v-row no-gutters>
-                <v-col cols="12" sm="5" class="mx-5 my-5">
+                <v-col cols="11" sm="5" class="mx-auto my-5">
                     <v-row>
                         <v-img
                         :src="require('../assets/hcboonsmile.png')"
@@ -20,19 +20,19 @@
                     </v-row>
 
                     <v-row>
-                        <v-row justify="center">
+                        <v-row justify="center" class="ml-1">
                             <v-btn
                                 v-for="(next, i) in whatsNext"
                                 :key="i"
                                 outlined
-                                class="rounded-lg mr-5"
+                                class="rounded-lg mr-2 mb-2"
                                 @click="goto(next.text)">
                                 {{next.text}}
                             </v-btn>
                         </v-row>
                     </v-row>
                 </v-col>
-                <v-col cols="12" sm="6" class="mx-5 my-8">
+                <v-col cols="11" sm="6" class="mx-auto my-8">
                     <v-row>
                         <div class="mac-top">
                             <div class="mac-exit"></div>
@@ -78,6 +78,12 @@
                                 </div>
                                 <div>
                                     <span class="yellow--text">["AWS Certified Solutions Architect - Associate"]</span>
+                                </div>
+                            </div>
+                            <div class="mac-input mt-3 ml-4">
+                                <div>
+                                    <span class="pink--text mr-2">></span>
+                                    <span id="whitebox">h</span>
                                 </div>
                             </div>
                         </div>
@@ -306,14 +312,25 @@
             viewportMeta.name = 'viewport';
             viewportMeta.content = 'width=device-width, initial-scale=1';
             document.head.appendChild(viewportMeta);
+
+            var blink_speed = 1000; // every 1000 == 1 second, adjust to suit
+            var t = setInterval(function () {
+                var ele = document.getElementById('whitebox');
+                ele.style.visibility = (ele.style.visibility == 'hidden' ? '' : 'hidden');
+            }, blink_speed);
+            console.log(t)
         } catch (e) {console.log(e)}
     },
 
     methods: {
         goto: function(page) {
             console.log(page)
-            var container = this.$el.querySelector("#" + page)
-            container.scrollIntoView({behavior: 'smooth'})
+            if (page == "Resume") {
+                this.$router.push({ path: "/resume" })
+            } else {
+                var container = this.$el.querySelector("#" + page)
+                container.scrollIntoView({behavior: 'smooth'})
+            }
         }
     }
   }
@@ -363,6 +380,11 @@
     width: 100%;
     height: 100%;
     border-radius: 0px 0px 10px 10px;
+}
+
+#whitebox {
+    background-color: white;
+    color: white;
 }
 
 .contactimg {
