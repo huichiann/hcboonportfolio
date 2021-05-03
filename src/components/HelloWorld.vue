@@ -32,7 +32,7 @@
                         </v-row>
                     </v-row>
                 </v-col>
-                <v-col cols="12" sm="6" class="mx-5 my-5">
+                <v-col cols="12" sm="6" class="mx-5 my-8">
                     <v-row>
                         <div class="mac-top">
                             <div class="mac-exit"></div>
@@ -86,15 +86,191 @@
             </v-row>
         </v-container>
     </v-row>
-    <v-row id="Projects" style="height: 500px;">
-        <v-row>
+    <v-divider class="mt-8 mx-5"></v-divider>
+    <v-row id="Projects" class="mx-5 my-5">
+        <v-col>
+            <v-row>
+                <v-col>
+                    <h1 class="display-1 font-weight-bold mt-5 text-center" >
+                        Past Projects
+                    </h1>
+                </v-col>
+            </v-row>
 
-        </v-row>
+            <v-row class="mt-8">
+                <v-card
+                    elevation="2"
+                    outlined
+                >
+                    <v-row>
+                        <v-col cols="4">
+                            <v-img
+                                :src="require('../assets/cerebroPink.png')"
+                                class="my-3"
+                                contain
+                                height="400"
+                            />
+                        </v-col>
+                        <v-divider
+                            vertical
+                            class="my-8 mr-4"
+                        ></v-divider>
+                        <v-col cols="6" class="my-3">
+                            <div class="text-h5 font-weight-bold mt-5">
+                                SMT 483 Smart City Project Experience
+                            </div>
+                            <div class="text-subtitle-1 font-weight-bold mt-5 font-italic">
+                                Cerebro
+                            </div>
+                            <div class="mt-3 text-justify">
+                                Delivered the first platform to harness data and generate insights into population construct and sentiment by working with the CEO and consultant to develop a data-gathering NLP & ML engine.
+                                <br> <br>As Lead Frontend Developer, developed website using VueJS catering to business requirements from client.
+                                <br> <br>Visit <a href="https://www.cerebro.tk/" target="_blank">here</a>
+                            </div>
+                        </v-col>
+                    </v-row>
+                </v-card>
+            </v-row>
+
+            <v-row class="mt-8">
+                <v-card
+                    elevation="2"
+                    outlined
+                >
+                    <v-row>
+                        <v-col cols="4">
+                            <expandable-image 
+                                class="image my-3 ml-2" 
+                                :src="require('../assets/smart_attendance.jpg')">
+                            </expandable-image>
+                        </v-col>
+                        <v-divider
+                            vertical
+                            class="my-8 mr-4"
+                        ></v-divider>
+                        <v-col cols="6" class="my-3">
+                            <div class="text-h5 font-weight-bold mt-5">
+                                SMT 203 Smart City Systems & Management
+                            </div>
+                            <div class="text-subtitle-1 font-weight-bold mt-5 font-italic">
+                                MacPi - Smart Attendance
+                            </div>
+                            <div class="mt-3 text-justify">
+                                MacPI aims to provide a seamless process for attendance taking. We achieve this by utilising IoT devices to collect user data over the Wifi network. This data is then used to automate the process by detecting who is in class during the duration of the lesson. 
+                                <br> <br>Ultimately, we hope to reimagine routine tasks, such as attendance taking, and streamline them.
+                            </div>
+                        </v-col>
+                    </v-row>
+                </v-card>
+            </v-row>
+
+            <v-row class="mt-8">
+                <v-card
+                    elevation="2"
+                    outlined
+                >
+                    <v-row>
+                        <v-col cols="4" >
+                            <expandable-image 
+                                class="image my-3 ml-2" 
+                                :src="require('../assets/smart_anly.jpg')">
+                            </expandable-image>
+                        </v-col>
+                        <v-divider
+                            vertical
+                            class="my-8 mr-4"
+                        ></v-divider>
+                        <v-col cols="6" class="my-3">
+                            <div class="text-h5 font-weight-bold mt-5">
+                                SMT 202 Analytics Applications for Smart Living
+                            </div>
+                            <div class="text-subtitle-1 font-weight-bold mt-5 font-italic">
+                                VVBot
+                            </div>
+                            <div class="mt-3 text-justify">
+                                Identified different pain points faced by consumers of food delivery so that we are able to generate solutions to tackle them 
+                                <br> <br>Scraped and conducted Topic Modelling and Sentiment Analysis on 24,000 textual data.
+                                <br> <br>Developed a chatbot and analytical dashboard to collect and display incoming textual data
+                            </div>
+                        </v-col>
+                    </v-row>
+                </v-card>
+            </v-row>
+
+            <v-row class="mt-8">
+                <v-card
+                    elevation="2"
+                    outlined
+                >
+                    <v-row>
+                        <v-col cols="4">
+                            <expandable-image 
+                                class="image my-3 ml-2" 
+                                :src="require('../assets/Geospatial.jpg')">
+                            </expandable-image>
+                        </v-col>
+                        <v-divider
+                            vertical
+                            class="my-8 mr-4"
+                        ></v-divider>
+                        <v-col cols="6" class="my-3">
+                            <div class="text-h5 font-weight-bold mt-5">
+                                SMT 201 Geospatial Analytics for Urban Planning
+                            </div>
+                            <div class="text-subtitle-1 font-weight-bold mt-5 font-italic">
+                                Remastering the Master Plan
+                            </div>
+                            <div class="mt-3 text-justify">
+                                MacPI aims to provide a seamless process for attendance taking. We achieve this by utilising IoT devices to collect user data over the Wifi network. This data is then used to automate the process by detecting who is in class during the duration of the lesson. Ultimately, we hope to reimagine routine tasks, such as attendance taking, and streamline them.
+                            </div>
+                        </v-col>
+                    </v-row>
+                </v-card>
+            </v-row>
+
+            
+        </v-col>
     </v-row>
-    <v-row id="Contact" style="height: 500px;">
-        <v-row>
+    <v-row id="Contact" >
+        <v-col cols="12" class="text-center">
+            Contact Me
+        </v-col>
 
-        </v-row>
+        <v-col cols="12" class="text-center">
+            <div>
+                <div class="contactimg">
+                    <a href="https://www.linkedin.com/in/hui-chiann-boon" target="_blank">
+                        <v-img
+                            :src="require('../assets/linkedin.png')"
+                            contain
+                            height=30
+                            width=30
+                        >
+                        </v-img>
+                    </a>
+                </div>
+                <div class="contactimg">
+                    <v-img
+                        :src="require('../assets/gmail.png')"
+                        contain
+                        height=30
+                        width=30
+                    >
+                    </v-img>
+                </div>
+                <div class="contactimg">
+                    <a href="https://github.com/huichiann" target="_blank">
+                        <v-img
+                            :src="require('../assets/github.png')"
+                            contain
+                            height=30
+                            width=30
+                        >
+                        </v-img>  
+                    </a>
+                </div>
+            </div>              
+        </v-col>
     </v-row>
     <back-to-top bottom="50px" right="50px">
         <button type="button" class="btn btn-info btn-to-top"><i class="fa fa-chevron-up"></i></button>
@@ -111,15 +287,12 @@
             whatsNext: [
                 {
                 text: 'Resume',
-                href: 'https://vuetifyjs.com/components/api-explorer',
                 },
                 {
                 text: 'Projects',
-                href: 'https://vuetifyjs.com/getting-started/pre-made-layouts',
                 },
                 {
                 text: 'Contact',
-                href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions',
                 },
             ],
             datetime:""
@@ -129,6 +302,10 @@
     async mounted() {
         try {
             this.datetime = new Date()
+            const viewportMeta = document.createElement('meta');
+            viewportMeta.name = 'viewport';
+            viewportMeta.content = 'width=device-width, initial-scale=1';
+            document.head.appendChild(viewportMeta);
         } catch (e) {console.log(e)}
     },
 
@@ -186,5 +363,10 @@
     width: 100%;
     height: 100%;
     border-radius: 0px 0px 10px 10px;
+}
+
+.contactimg {
+    display: inline-block;
+    margin-right: 8px;
 }
 </style>

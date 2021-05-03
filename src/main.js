@@ -6,8 +6,10 @@ import vueHeadful from 'vue-headful'
 import BackToTop from 'vue-backtotop'
 import '@fortawesome/fontawesome-free/css/all.css'
 import '@fortawesome/fontawesome-free/js/all.js'
+import VueExpandableImage from 'vue-expandable-image'
 
 Vue.component('vue-headful', vueHeadful);
+Vue.use(VueExpandableImage)
 Vue.use(BackToTop)
 Vue.config.productionTip = false
 
