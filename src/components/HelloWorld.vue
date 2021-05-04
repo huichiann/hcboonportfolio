@@ -25,7 +25,8 @@
                                 v-for="(next, i) in whatsNext"
                                 :key="i"
                                 outlined
-                                class="rounded-lg mr-2 mb-2"
+                                rounded
+                                class="mr-2 mb-2"
                                 @click="goto(next.text)">
                                 {{next.text}}
                             </v-btn>
@@ -103,138 +104,9 @@
                 </v-col>
             </v-row>
 
-            <v-row class="mt-8">
-                <v-card
-                    elevation="2"
-                    outlined
-                >
-                    <v-row>
-                        <v-col cols="4">
-                            <v-img
-                                :src="require('../assets/cerebroPink.png')"
-                                class="my-3"
-                                contain
-                                height="400"
-                            />
-                        </v-col>
-                        <v-divider
-                            vertical
-                            class="my-8 mr-4"
-                        ></v-divider>
-                        <v-col cols="6" class="my-3">
-                            <div class="text-h5 font-weight-bold mt-5">
-                                SMT 483 Smart City Project Experience
-                            </div>
-                            <div class="text-subtitle-1 font-weight-bold mt-5 font-italic">
-                                Cerebro
-                            </div>
-                            <div class="mt-3 text-justify">
-                                Delivered the first platform to harness data and generate insights into population construct and sentiment by working with the CEO and consultant to develop a data-gathering NLP & ML engine.
-                                <br> <br>As Lead Frontend Developer, developed website using VueJS catering to business requirements from client.
-                                <br> <br>Visit <a href="https://www.cerebro.tk/" target="_blank">here</a>
-                            </div>
-                        </v-col>
-                    </v-row>
-                </v-card>
-            </v-row>
-
-            <v-row class="mt-8">
-                <v-card
-                    elevation="2"
-                    outlined
-                >
-                    <v-row>
-                        <v-col cols="4">
-                            <expandable-image 
-                                class="image my-3 ml-2" 
-                                :src="require('../assets/smart_attendance.jpg')">
-                            </expandable-image>
-                        </v-col>
-                        <v-divider
-                            vertical
-                            class="my-8 mr-4"
-                        ></v-divider>
-                        <v-col cols="6" class="my-3">
-                            <div class="text-h5 font-weight-bold mt-5">
-                                SMT 203 Smart City Systems & Management
-                            </div>
-                            <div class="text-subtitle-1 font-weight-bold mt-5 font-italic">
-                                MacPi - Smart Attendance
-                            </div>
-                            <div class="mt-3 text-justify">
-                                MacPI aims to provide a seamless process for attendance taking. We achieve this by utilising IoT devices to collect user data over the Wifi network. This data is then used to automate the process by detecting who is in class during the duration of the lesson. 
-                                <br> <br>Ultimately, we hope to reimagine routine tasks, such as attendance taking, and streamline them.
-                            </div>
-                        </v-col>
-                    </v-row>
-                </v-card>
-            </v-row>
-
-            <v-row class="mt-8">
-                <v-card
-                    elevation="2"
-                    outlined
-                >
-                    <v-row>
-                        <v-col cols="4" >
-                            <expandable-image 
-                                class="image my-3 ml-2" 
-                                :src="require('../assets/smart_anly.jpg')">
-                            </expandable-image>
-                        </v-col>
-                        <v-divider
-                            vertical
-                            class="my-8 mr-4"
-                        ></v-divider>
-                        <v-col cols="6" class="my-3">
-                            <div class="text-h5 font-weight-bold mt-5">
-                                SMT 202 Analytics Applications for Smart Living
-                            </div>
-                            <div class="text-subtitle-1 font-weight-bold mt-5 font-italic">
-                                VVBot
-                            </div>
-                            <div class="mt-3 text-justify">
-                                Identified different pain points faced by consumers of food delivery so that we are able to generate solutions to tackle them 
-                                <br> <br>Scraped and conducted Topic Modelling and Sentiment Analysis on 24,000 textual data.
-                                <br> <br>Developed a chatbot and analytical dashboard to collect and display incoming textual data
-                            </div>
-                        </v-col>
-                    </v-row>
-                </v-card>
-            </v-row>
-
-            <v-row class="mt-8">
-                <v-card
-                    elevation="2"
-                    outlined
-                >
-                    <v-row>
-                        <v-col cols="4">
-                            <expandable-image 
-                                class="image my-3 ml-2" 
-                                :src="require('../assets/Geospatial.jpg')">
-                            </expandable-image>
-                        </v-col>
-                        <v-divider
-                            vertical
-                            class="my-8 mr-4"
-                        ></v-divider>
-                        <v-col cols="6" class="my-3">
-                            <div class="text-h5 font-weight-bold mt-5">
-                                SMT 201 Geospatial Analytics for Urban Planning
-                            </div>
-                            <div class="text-subtitle-1 font-weight-bold mt-5 font-italic">
-                                Remastering the Master Plan
-                            </div>
-                            <div class="mt-3 text-justify">
-                                MacPI aims to provide a seamless process for attendance taking. We achieve this by utilising IoT devices to collect user data over the Wifi network. This data is then used to automate the process by detecting who is in class during the duration of the lesson. Ultimately, we hope to reimagine routine tasks, such as attendance taking, and streamline them.
-                            </div>
-                        </v-col>
-                    </v-row>
-                </v-card>
-            </v-row>
-
-            
+            <div v-for="curr in pastProjs" :key="curr.projectTitle">
+                <CurrentProject :currSrc="curr.currSrc" :courseTitle="curr.courseTitle" :projectTitle="curr.projectTitle" :projectDescription="curr.projectDescription"/>
+            </div>
         </v-col>
     </v-row>
     <v-row id="Contact" >
@@ -256,13 +128,15 @@
                     </a>
                 </div>
                 <div class="contactimg">
-                    <v-img
-                        :src="require('../assets/gmail.png')"
-                        contain
-                        height=30
-                        width=30
-                    >
-                    </v-img>
+                    <a href="mailto:hcbooon@gmail.com">
+                        <v-img
+                            :src="require('../assets/gmail.png')"
+                            contain
+                            height=30
+                            width=30
+                        >
+                        </v-img>
+                    </a>
                 </div>
                 <div class="contactimg">
                     <a href="https://github.com/huichiann" target="_blank">
@@ -285,23 +159,43 @@
 </template>
 
 <script>
+import CurrentProject from "../components/CurrentProj"
+
   export default {
     name: 'HelloWorld',
-
+    components: {
+        CurrentProject
+    },
     data() {
         return {
             whatsNext: [
-                {
-                text: 'Resume',
-                },
-                {
-                text: 'Projects',
-                },
-                {
-                text: 'Contact',
-                },
+                { text: 'Resume', },
+                { text: 'Projects', },
+                { text: 'Contact', },
             ],
-            datetime:""
+            datetime:"",
+            pastProjs: [ 
+                {   currSrc: "cerebroPink.png", 
+                    courseTitle: "SMT 483 Smart City Project Experience",
+                    projectTitle: "Cerebro",
+                    projectDescription: "Delivered the first platform to harness data and generate insights into population construct and sentiment by working with the CEO and consultant to develop a data-gathering NLP & ML engine. <br> <br>As Lead Frontend Developer, developed website using VueJS catering to business requirements from client. <br> <br>Visit <a href='https://www.cerebro.tk/' target='_blank'>here</a>"
+                },
+                {   currSrc: "smart_attendance.jpg", 
+                    courseTitle: "SMT 203 Smart City Systems & Management",
+                    projectTitle: "MacPI - Smart Attendance",
+                    projectDescription: "MacPI aims to provide a seamless process for attendance taking. We achieve this by utilising IoT devices to collect user data over the Wifi network. This data is then used to automate the process by detecting who is in class during the duration of the lesson. <br> <br>Ultimately, we hope to reimagine routine tasks, such as attendance taking, and streamline them."
+                },
+                {   currSrc: "smart_anly.jpg", 
+                    courseTitle: "SMT 202 Analytics Applications for Smart Living",
+                    projectTitle: "VVBot",
+                    projectDescription: "Identified different pain points faced by consumers of food delivery so that we are able to generate solutions to tackle them <br> <br>Scraped and conducted Topic Modelling and Sentiment Analysis on 24,000 textual data. <br> <br>Developed a chatbot and analytical dashboard to collect and display incoming textual data"
+                },
+                {   currSrc: "Geospatial.jpg", 
+                    courseTitle: "SMT 201 Geospatial Analytics for Urban Planning",
+                    projectTitle: "Remastering the Master Plan",
+                    projectDescription: "Delivered the first platform to harness data and generate insights into population construct and sentiment by working with the CEO and consultant to develop a data-gathering NLP & ML engine. <br> <br>As Lead Frontend Developer, developed website using VueJS catering to business requirements from client. <br> <br>Visit <a href='https://www.cerebro.tk/' target='_blank'>here</a>"
+                },
+            ]
         }
     },
 
@@ -331,7 +225,7 @@
                 var container = this.$el.querySelector("#" + page)
                 container.scrollIntoView({behavior: 'smooth'})
             }
-        }
+        },
     }
   }
 </script>
