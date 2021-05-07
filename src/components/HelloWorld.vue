@@ -161,7 +161,7 @@
 <script>
 import CurrentProject from "../components/CurrentProj"
 
-  export default {
+export default {
     name: 'HelloWorld',
     components: {
         CurrentProject
