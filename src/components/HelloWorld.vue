@@ -193,7 +193,7 @@ export default {
                 {   currSrc: "Geospatial.jpg", 
                     courseTitle: "SMT 201 Geospatial Analytics for Urban Planning",
                     projectTitle: "Remastering the Master Plan",
-                    projectDescription: "Delivered the first platform to harness data and generate insights into population construct and sentiment by working with the CEO and consultant to develop a data-gathering NLP & ML engine. <br> <br>As Lead Frontend Developer, developed website using VueJS catering to business requirements from client. <br> <br>Visit <a href='https://www.cerebro.tk/' target='_blank'>here</a>"
+                    projectDescription: "Analysed the current Master Plan and provided areas of possible improvements to incorporate better recreation, healthcare etc for residents. <br> <br> Applied different techniques in geospatial analytics to calculate optimal areas for additional establishments based on current master plan."
                 },
             ]
         }
